@@ -169,9 +169,9 @@ class Discriminator(nn.Module):
         return validity
 
 
-class VAENew(nn.Module):
+class CATDModel(nn.Module):
     def __init__(self, args):
-        super(VAENew, self).__init__()
+        super(CATDModel, self).__init__()
 
         self.args = args
         self.input_size = args.x_dim
@@ -370,7 +370,7 @@ if __name__ == '__main__':
             result_total = []
             data_loader = train_loader
             for j in range(1):
-                model = VAENew(args)
+                model = CATDModel(args)
                 model = model.cuda()
                 result, acc_all = [], []
                 best_tar_f1, best_iter = 0.0, 0
